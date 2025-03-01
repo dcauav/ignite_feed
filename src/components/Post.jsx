@@ -1,4 +1,6 @@
-function Post (props) {
+import styles from './Post.module.css';
+
+export function Post (props) {
     return (
         <div>
             <strong>{props.author}</strong>
@@ -6,5 +8,3 @@ function Post (props) {
         </div>
     )
 }
-
-export default Post
