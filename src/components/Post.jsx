@@ -29,7 +29,7 @@ export function Post({ author, content, publishedAt }) {
         event.preventDefault();
 
         if (!isNewCommentEmpty) {
-            setComments([...comments, newCommentText.trim()]);
+            setComments(state => [...state, newCommentText.trim()]);
             setNewCommentText('');
         }
     }
@@ -44,8 +44,7 @@ export function Post({ author, content, publishedAt }) {
     }
 
     function deleteComment(commentToDelete) {
-        const commentsWithoutDeletedOne = comments.filter((comment) => comment !== commentToDelete);
-        setComments(commentsWithoutDeletedOne);
+        setComments(state => state.filter((comment) => comment !== commentToDelete));
     }
     
     return (
